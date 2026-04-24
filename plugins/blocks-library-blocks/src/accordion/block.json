@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blocks-library/accordion",
+  "title": "Accordion",
+  "category": "design",
+  "description": "A collapsible accordion with a title and inner blocks for the body.",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "initiallyOpen": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "editorScript": "file:../index.js"
+}

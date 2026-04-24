@@ -4,7 +4,7 @@ Tags: GraphQL, ACF, API, NextJS, Headless
 Requires at least: 5.9
 Tested up to: 6.5
 Requires PHP: 7.3
-Stable tag: 2.5.2
+Stable tag: 2.6.0
 License: GPL-3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -100,6 +100,8 @@ WPGraphQL for Advanced Custom Fields uses [Appsero](https://appsero.com) SDK to 
 
 The Appsero SDK **doesn't collect data by default** and only starts gathering basic telemetry data when a user allows it via the admin notice. No data is collected without user consent.
 
+When you opt in, each telemetry request is sent to Appsero and a duplicate is sent in a non-blocking request to WPGraphQL-operated infrastructure at https://telemetry.wpgraphql.com (the same categories of data as described for Appsero below).
+
 Learn more about how [Appsero collects and uses data](https://appsero.com/privacy-policy/).
 
 == Upgrade Notice ==
@@ -119,6 +121,40 @@ ACF Field Groups that did not have "graphql_types" defined AND were assigned to 
 This release is a complete re-architecture of WPGraphQL for ACF, introducing breaking changes to the GraphQL Schema and PHP API. Please read the [upgrade guide](https://acf.wpgraphql.com/upgrade-guide/) before upgrading.
 
 == Changelog ==
+
+= 2.6.0 =
+
+**New Features**
+
+* **telemetry:** mirror Appsero insights to telemetry.wpgraphql.com ([#3785](https://github.com/wp-graphql/wp-graphql/issues/3785))
+
+**Bug Fixes**
+
+* **deps-dev:** bump composer/composer from 2.2.26 to 2.2.27 in /plugins/wp-graphql-acf ([#3774](https://github.com/wp-graphql/wp-graphql/issues/3774))
+* sync readme.txt changelogs with releases ([#3744](https://github.com/wp-graphql/wp-graphql/issues/3744))
+
+= 2.5.2 =
+
+**Bug Fixes**
+
+* **deps-dev:** bump guzzlehttp/psr7 from 2.8.0 to 2.9.0 in /plugins/wp-graphql-acf in the wp-graphql-acf-composer-dev-minor-patch group ([#3643](https://github.com/wp-graphql/wp-graphql/issues/3643))
+* **deps:** bump appsero/client from 1.2.1 to 1.4.0 in /plugins/wp-graphql-acf ([#3726](https://github.com/wp-graphql/wp-graphql/issues/3726))
+
+= 2.5.1 =
+
+**Bug Fixes**
+
+* **wp-graphql-acf:** ACF-registered post types/taxonomies not in GraphQL schema (init priority) ([#3609](https://github.com/wp-graphql/wp-graphql/issues/3609))
+
+= 2.5.0 =
+
+**New Features**
+
+* migrate WPGraphQL for ACF to monorepo ([#3581](https://github.com/wp-graphql/wp-graphql/issues/3581))
+
+**Bug Fixes**
+
+* allow null/empty meta_key in preview_support() for get_post_meta filter ([#3599](https://github.com/wp-graphql/wp-graphql/issues/3599))
 
 = 2.4.1 =
 
